@@ -1,3 +1,4 @@
+// Child of App; displays the blog name supplied through props.
 function Header({ name = "" }) {
   return (
     <header>

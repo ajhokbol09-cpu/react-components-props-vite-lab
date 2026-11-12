@@ -1,3 +1,4 @@
+// Child of ArticleList; renders the fields for one post.
 function Article({
   title = "",
   date = "January 1, 1970",

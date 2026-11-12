@@ -3,6 +3,7 @@ import Header from "./Header";
 import About from "./About";
 import ArticleList from "./ArticleList";
 
+// Root component: supplies blog data to the header, about panel, and post list.
 function App() {
   return (
     <div className="App">
