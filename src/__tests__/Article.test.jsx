@@ -62,3 +62,18 @@ test("renders a <p> with the preview text", () => {
   expect(p).toBeInTheDocument();
   expect(p.tagName).toBe("P");
 });
+
+test.each([
+  [3, "☕️ 3 min read"],
+  [7, "☕️☕️ 7 min read"],
+  [35, "🍱🍱🍱🍱 35 min read"],
+  [61, "🍱🍱🍱🍱🍱🍱🍱 61 min read"],
+])("renders the read-time indicator for %i minutes", (minutes, readTime) => {
+  render(<Article title="A post" minutes={minutes} />);
+  expect(screen.getByText(new RegExp(readTime))).toBeInTheDocument();
+});
+
+test("does not render a read-time indicator when minutes are not provided", () => {
+  render(<Article title="A post" />);
+  expect(screen.queryByText(/min read/)).not.toBeInTheDocument();
+});

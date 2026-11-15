@@ -33,7 +33,13 @@ App
 - `ArticleList` receives `posts` from `App` and renders an `Article` for each
   post.
 - `Article` receives each post's `title`, `date`, and `preview` from
-  `ArticleList`.
+  `ArticleList`, and displays a coffee or bento-box read-time indicator when
+  the post includes a `minutes` value.
+
+## Read-time indicator
+
+Posts under 30 minutes display one coffee cup per 5 minutes (rounded up).
+Posts of 30 minutes or more display one bento box per 10 minutes (rounded up).
 
 ## Screenshot
 
